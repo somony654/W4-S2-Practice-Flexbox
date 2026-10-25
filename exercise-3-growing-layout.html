@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> The layout that can grow</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 1rem;
+        }
+        .container {
+            color: white;
+            width: 100%;
+            height: calc(100vh - 2rem);
+            display: grid;
+            border-radius: 0.5rem;
+            grid-template-columns: 3fr 1fr;
+            grid-template-rows: 42px minmax(0, 1fr) 42px;
+            gap: 1rem;
+        }
+
+        .header {
+            grid-column: 1 / -1;
+            background: #1e90ff;
+            box-shadow: 0.5rem 0.5rem 0.5rem #0077ea;
+            border-radius: 0.5rem;
+        }
+
+        .header, .sidebar, .footer {
+            display: flex;
+            align-items: center;
+            padding: 0 1rem;
+        }
+
+        .main {
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+            gap: 1rem;
+            padding: 1rem;
+            background: #3cb371;
+            box-shadow: 0.5rem 0.5rem 0.5rem #2f8d59;
+            border-radius: 0.5rem;
+        }
+
+        .main-title {
+            flex: 0 0 100%;
+            margin: 0;
+        }
+
+        .item {
+            height: 50px;
+            width: 50px;
+            padding: 10px;
+            border-radius: 0.5rem;
+            background: #2e8b57;
+            color: white;
+            text-align: center;
+            box-shadow: 0.5rem 0.5rem 0.5rem #226741;
+        }
+
+        .sidebar {
+            align-items: flex-start;
+            padding-top: 1rem;
+            background: #ff6347;
+            border-radius: 0.5rem;
+            box-shadow: 0.5rem 0.5rem 0.5rem #e02200;
+        }
+
+        .footer {
+            grid-column: 1 / -1;
+            background: #4169e1;
+            box-shadow: 0.5rem 0.5rem 0.5rem #1d44b8;
+            border-radius: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">Header</header>
+
+        <main class="main">
+            <h4 class="main-title">Main</h4>
+            <div class="item">item</div>
+            <div class="item">item</div>
+            <div class="item">item</div>
+            <div class="item">item</div>
+            <div class="item">item</div>
+            <div class="item">item</div>
+            <div class="item">item</div>
+            <div class="item">item</div>
+            <div class="item">item</div>
+            <div class="item">item</div>
+            <div class="item">item</div>
+        </main>
+
+        <aside class="sidebar">Sidebar</aside>
+
+        <footer class="footer">Footer</footer>
+    </div>
+</body>
+</html>
